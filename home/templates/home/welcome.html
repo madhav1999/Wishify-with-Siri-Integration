@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>Choose the below option as you wish</h1>
+        <p>Today is {{today}}</p></br></br>
+        <h4> This for Youtube</h4>
+        <a href="{% url 'forYou.new' %}" class="btn btn-secondary">Insert into Youtube</a>
+        <a href="{% url 'allTabsY.list' %}" class="btn btn-primary" >check out the youtube wishlist</a>
+        </br></br>
+        <h4> This for Twitter</h4>
+        <a href="{% url 'forTwi.new' %}" class="btn btn-secondary">Insert into Twitter</a>
+        <a href="{% url 'allTabsT.list' %}" class="btn btn-primary" >check out the Twitter wishlist</a>
+
+{% endblock %} 

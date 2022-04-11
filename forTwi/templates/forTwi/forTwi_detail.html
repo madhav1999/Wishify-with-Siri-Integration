@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h4 classs="my-5"> This is all the data of selected data that has description:</br></br><u><emp>{{dataD.description}}:</emp></u></h4>
+</br>
+</br>
+
+    <div class="row row-cols3 g-2">
+
+        <div class="col">
+            <div class="p-3 border">
+                <a href="{{dataD.link}}">{{dataD.link}}</a><!--everything in curly of curly braces is rendered by the template-->
+            </div>
+        </br></br>
+        <a href="{% url 'allTabsT.list' %}" class="btn btn-secondary">back</a>
+        <a href="{% url 'forTwi.update' pk=dataD.id%}" class="btn btn-secondary">edit</a>
+        <a href="{% url 'forTwi.delete' pk=dataD.id%}" class="btn btn-danger">delete</a>
+
+        </div>
+    </div>
+{% endblock %}

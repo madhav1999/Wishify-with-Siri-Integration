@@ -1,0 +1,25 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 classs="my-5"> This is all the data:</h1>
+</br>
+</br>
+
+    <div class="row row-cols3 g-2">
+        {% for i in dataT %}<!--everything in between curly braces and percentages is Regarded as DTL-->
+        <div class="col">
+            <div class="p-3 border">
+                <a href="{{i.link}}">{{i.link}}</a><!--everything in curly of curly braces is rendered by the template-->
+            </br></br>
+                <h6>{{i.description}}</h6>
+                <a href="{% url 'forTwi.data' pk=i.id %}"> click here to enter into </a>
+
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{% url 'forTwi.new' %}" class="btn btn-secondary">Insert</a>
+
+    </div>
+{% endblock %}
